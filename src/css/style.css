@@ -1,0 +1,740 @@
+body {
+    background-color: #f1f8ff;
+    margin: 0;
+}
+
+header {
+    background-color: #f1f8ff;
+    /* 画面上部に固定 */
+    position: sticky;
+    top: 0;
+    margin: 0;
+    height: 40px;
+    padding: 15px;
+    display: flex;
+    /* ログアウトボタンと戻る/プロフボタンを両端に表示 */
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    /* 重なるように表示 */
+    z-index: 1;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* header_*.php */
+/* ログアウトボタン */
+.logout_form {
+    display: flex;
+    align-items: center;
+}
+
+.logout_btn {
+    height: 30px;
+    width: 80px;
+    font-size: 13px;
+    border: 0;
+    color: #414141;
+    border: 1px solid #414141;
+    background-color: #f1f8ff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.logout_btn:hover {
+    background-color: #e4e4e4;
+}
+
+/* header_prof.php */
+/* プロフボタン */
+.prof_icon {
+    padding-top: 5px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+}
+
+.prof_icon:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.prof_btn {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+/* header_return.php */
+/* 戻るボタン */
+.return {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: block;
+    cursor: pointer;
+}
+
+.return:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* timeline.php... */
+/* 投稿ページ遷移ボタン */
+.post_btn {
+    display: block;
+    /* ボタンの位置を右下に固定 */
+    position: fixed;
+    right: 0;
+    bottom: 80px;
+    margin: 10px;
+    /* 重なるように表示 */
+    z-index: 1;
+    height: 50px;
+    width: 120px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 2px solid #9abaff;
+    color: #fff;
+    background-color: #77a2ff;
+    border-radius: 100vh;
+    cursor: pointer;
+}
+
+.post_btn:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* 投稿反応用ボタン */
+.post_icon {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.post_icon .icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* list.php */
+/* タイムライン */
+.timeline {
+    /* フッターと重ならないようにpadding付与 */
+    padding-bottom: 80px;
+}
+
+/* 投稿 */
+.post {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	border: solid 1px #d6d6d6;
+    /* 次の投稿とborderが重ならないように下部のborderは削除 */
+    border-bottom: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	background-color: #f1f8ff;
+}
+
+.post:hover {
+	opacity: 0.85;
+	transition: 0.1s;
+}
+
+a {
+    /* 下線を削除 */
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 投稿のプロフィール */
+.timeline_prof {
+    width: 200px;
+    display: flex;
+}
+
+.timeline_icon {
+    max-width: 40px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.timeline_icon:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.timeline_username {
+    font-size: 14px;
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.timeline_username:hover {
+    text-decoration: underline;
+}
+
+/* 投稿内容 */
+.timeline_post {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* メイン画像 */
+.main_image {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    /* 画像のアスペクト比は固定 */
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid #99aadf;
+    cursor: pointer;
+}
+
+.main_image:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* グループ画像 */
+.group_image {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+    /* 画像のアスペクト比は固定 */
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid #99aadf;
+    cursor: pointer;
+}
+
+.group_image:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* detail.php */
+/* 詳細ページは全体的にtimelineの投稿より大きい */
+/* 詳細ページにもtimeline同様padding付与 */
+.detail_padding {
+    padding-bottom: 80px;
+}
+
+/* 詳細ページの投稿 */
+.post_detail {
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	border: solid 1px #d6d6d6;
+    border-bottom: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	background-color: #f1f8ff;
+}
+
+/* 投稿ユーザーのプロフィール */
+.detail_prof {
+    width: 200px;
+    display: flex;
+}
+
+.detail_icon {
+    max-width: 50px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.detail_icon:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.detail_username {
+    font-size: 20px;
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail_username:hover {
+    text-decoration: underline;
+}
+
+/* 投稿内容 */
+.detail_post {
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+/* メイン画像 */
+.detail_main_image {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid #99aadf;
+    cursor: pointer;
+}
+
+.detail_main_image:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* グループ画像 */
+.detail_group_image {
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 3px;
+    border: 1px solid #99aadf;
+    cursor: pointer;
+}
+
+.detail_group_image:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+/* 投稿に対する親コメント */
+.post_comment {
+	padding: 5px;
+	border-top: solid 2px #5c5c5c;
+    border-bottom: none;
+	background-color: #f1f8ff;
+}
+
+/* コメントのユーザープロフ */
+.comment_prof {
+    width: 200px;
+    display: flex;
+}
+
+.comment_icon {
+    max-width: 30px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.comment_icon:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.comment_username {
+    font-size: 15px;
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.comment_username:hover {
+    text-decoration: underline;
+}
+
+/* コメント内容 */
+.comment_detail {
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+/* 子コメント */
+.parent_comment {
+    text-align: center;
+    width: 85%;
+    max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	border-top: solid 1px #d6d6d6;
+	background-color: #f1f8ff;
+}
+
+/* modal.php */
+/* 画像表示用モーダル */
+/* post.phpでのcroppieにも使用 */
+.image_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.image_modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* コメント用モーダル */
+.comment_modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 700px;
+    aspect-ratio: 5/3;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 3;
+}
+
+/* オーバーレイ */
+.overlay {
+    /* 画面全体にオーバーレイを表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+     /* オーバーレイがモーダルの後ろに表示されるようにする */
+    z-index: 2;
+}
+
+/* post.php */
+/* 画像がアップロードされていない状態での表示 */
+.image_label {
+    display: flex;
+    background: #e7fcff;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #7c7c7c;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 投稿画面でのメイン画像 */
+.main_image_container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    aspect-ratio: 2/3;
+    border: dashed 2px #c5dcff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 投稿画面でのグループ画像 */
+.group_image_container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    aspect-ratio: 5/3;
+    border: dashed 2px #c5dcff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* croppie */
+.modal_content {
+    background: white;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_content > #croppie {
+    width: 100%;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#croppie {
+    width: 100%;
+    height: 400px;
+}
+
+#crop_button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#crop_button:hover {
+    background-color: #45a049;
+}
+
+.cropped_image {
+    cursor: pointer;
+}
+
+/* ラジオボタン・チェックボックス(seach.php) */
+.radio,.checkbox {
+    margin-right: 5px;
+}
+
+label .hidden {
+    display: none;
+}
+
+label span {
+    color: #333333;
+    font-size: 14px;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    padding: 5px 20px;
+    display: inline-block;
+}
+
+label .hidden:checked + span {
+    color: #ffffff;
+    background: #a1bfff;
+    border: 1px solid #a1bfff;
+}
+
+.two, .three {
+    display: none;
+}
+
+/* footer.php */
+/* フッター */
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #f1f8ff;
+    border-top: 2px solid #ccc;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+
+footer a {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .icon {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+footer .icon:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* calender.php */
+/* 完成していないためコメントアウト */
+/* table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.calendar_day {
+    font-size: 15px;
+    border: 1px solid #bbb;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    line-height: 70px;
+}
+
+.week {
+    font-size: 15px;
+    border: 1px solid #bbb;
+    text-align: center;
+    padding: 0;
+    line-height: 25px;
+}
+
+.calendar td:first-child {
+    color: red;
+}
+
+.calendar td:last-child {
+    color: royalblue;
+}
+
+.calendar td.is_disabled {
+    color: #ccc;
+}
+
+.event {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.calender_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 1000;
+    display: none;
+}
+
+.calender_modal {
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-radius: 4px;
+    font-size: 0.8em;
+    cursor: move;
+} */
+
+/* follow.php */
+/* フォローしていない状態 */
+.follow[data-following='false'],.edit {
+    color: #333333;
+    font-size: 14px;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    padding: 5px 20px;
+    background: #f1f8ff;
+    cursor: pointer;
+}
+
+.follow[data-following='false']:hover,.edit:hover {
+    background: #d6eaff;
+}
+
+/* フォロー状態 */
+.follow[data-following='true'] {
+    color: #ffffff;
+    font-size: 14px;
+    background: #a1bfff;
+    border: 1px solid #5584e7;
+    border-radius: 20px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.follow[data-following='true']:hover {
+    background: #c0d4ff;
+}
+
+/* prof_edit.php */
+/* プロフアイコン */
+.prof_image_container {
+    position: relative;
+    display: inline-block;
+}
+
+.prof_image {
+    width: 150px;
+    height: auto;
+}
+
+.prof_image_container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.prof_image_container:hover::after {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.prof_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.prof_label input[type="file"] {
+    display: none;
+}
+
+/* カメラアイコン */
+.camera_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* 画像の中央に配置 */
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    /* croppieイベント用にクリック判定を削除 */
+    pointer-events: none;
+}
