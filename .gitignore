@@ -1,0 +1,7 @@
+vendor/
+.env
+node_modules/
+src/images/*
+
+!src/images/userIcon/default.png
+!src/images/buttonIcon

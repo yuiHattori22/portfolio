@@ -1,0 +1,26 @@
+{
+	"env": {
+		"browser": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:html/recommended",
+		"plugin:css/recommended",
+		"@eslint/js",
+		"prettier"
+	],
+	"plugins": ["html", "css"],
+	"parserOptions": {
+		"ecmaVersion": 2024,
+		"sourceType": "module"
+	},
+	"rules": {
+		"no-unused-vars": ["warn"],
+		"no-console": ["warn", { "allow": ["warn", "error"] }],
+		"consistent-return": "error",
+		"prefer-const": "error",
+		"no-magic-numbers": ["warn", { "ignore": [0, 1] }],
+		"no-multiple-empty-lines": ["error", { "max": 1 }],
+		"no-mixed-spaces-and-tabs": "error"
+	}
+}
